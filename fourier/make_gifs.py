@@ -3,8 +3,8 @@ import numpy as np
 from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-from fourier import funcs
-from fourier.Fourier import Fourier
+import funcs
+from Fourier import Fourier
 import moviepy.editor as mp
 from typing import Tuple
 import pandas as pd
@@ -40,8 +40,15 @@ def save_fourier_gif(fourier: Fourier, save_path=r'C:\temp\myfirstAnimation.gif'
 
     df = funcs.get_fourier_df_for_plotting(fourier=fourier)
 
+    xmin, xmax = xrange
+    ymin, ymax = yrange
+
+    ymin, ymax = min(ymin, min(fourier.gen_line.imag)), max(ymax, max(fourier.gen_line.imag))
+    xmin, xmax = min(xmin, min(fourier.gen_line.real)), max(xmax, max(fourier.gen_line.real))
+
+
     fig = plt.figure()
-    ax = plt.axes(xlim=xrange, ylim=yrange)
+    ax = plt.axes(xlim=(xmin, xmax), ylim=(ymin, ymax))
 
     line1, = ax.plot([], [], lw=2)
     line2, = ax.plot([], [], lw=2)

@@ -1,6 +1,6 @@
-from fourier.Fourier import Fourier
-from fourier.Drawing import Drawing
-import fourier.make_gifs as mg
+from Fourier import Fourier
+from Drawing import Drawing
+import make_gifs as mg
 
 
 def main():

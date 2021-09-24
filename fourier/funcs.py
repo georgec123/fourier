@@ -3,7 +3,7 @@ from svg.path import parse_path
 import numpy as np
 import os
 import pandas as pd
-from fourier.Fourier import Fourier
+from Fourier import Fourier
 
 
 def fourier_sum_term(coef: complex, n: int, t: float) -> complex:
