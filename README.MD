@@ -1,4 +1,4 @@
-#Fourier 
+# Fourier 
 Package for generating fourier gif from user input.
 
 
